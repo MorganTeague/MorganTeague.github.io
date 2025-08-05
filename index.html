@@ -1,1 +1,31 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Morgan Tech Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+  <div class="login-container">
+    <img class="logo" src="https://www.colorhexa.com/ff8360.png" alt="Morgan Tech Logo">
+    <p>Members, enter your email (e.g., gg@gmail.com).<br>Others, just hit submit!</p>
+    <form onsubmit="handleLogin(event)">
+      <input type="email" id="userEmail" placeholder="Your email">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      window.location.href = "main.html";
+    }
+  </script>
+</body>
+
+</html>
+
