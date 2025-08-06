@@ -4,15 +4,58 @@
 <head>
   <title>Morgan Tech Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    body {
+      background: #3A8DFF;
+      background-size: cover;
+      color: white;
+      font-family: Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* align to top with offset */
+      height: 100vh;
+      text-align: center;
+    }
 
+    .center-container {
+      margin-top: 60px; /* move down slightly */
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      margin-bottom: 20px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input {
+      border: 0;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      margin: 5px;
+    }
+
+    input[type="submit"] {
+      background: black;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="login-container">
+
+  <div class="center-container">
     <img class="logo" src="https://www.colorhexa.com/ff8360.png" alt="Morgan Tech Logo">
-    <p>Members, enter your email (e.g., gg@gmail.com).<br>Others, just hit submit!</p>
+    <p>Members, enter your email (e.g., gg@gmail.com) Others, just hit submit!</p>
+
     <form onsubmit="handleLogin(event)">
       <input type="email" id="userEmail" placeholder="Your email">
       <input type="submit" value="Submit">
@@ -28,4 +71,3 @@
 </body>
 
 </html>
-
