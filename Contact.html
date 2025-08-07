@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Morgan Tech</title>
+
+  <!-- Bootstrap + Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary: #5EE4B1;
+      --accent: #FAD4C0;
+      --secondary: #1E2A38;
+      --bg: #FDFDFD;
+      --text: #2D2D2D;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    .navbar {
+      background-color: var(--secondary);
+      padding: 0.8rem 1rem;
+    }
+
+    .navbar-brand {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .nav-link {
+      color: white;
+      margin-left: 1rem;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .logo {
+      width: 60px;
+      margin-right: 8px;
+      border-radius: 50%;
+    }
+
+    .contact-section {
+      padding: 80px 20px;
+      background-color: var(--accent);
+    }
+
+    .contact-section h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .form-control, .btn {
+      border-radius: 8px;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #47cda1;
+    }
+
+    .social-links a {
+      font-size: 1.5rem;
+      margin: 0 10px;
+      color: var(--secondary);
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+    }
+
+    footer {
+      background: var(--bg);
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<<nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://mail.google.com/mail/u/0?ui=2&ik=0955521b44&attid=0.1&permmsgid=msg-a:r2513265559207895653&th=1985db9bea171fdd&view=fimg&fur=ip&permmsgid=msg-a:r2513265559207895653&sz=s0-l75-ft&attbid=ANGjdJ-e23gzZLv9XbE43EfTnPV4pPF0d22kJUlMJjbw9FSoIEmEdQexGu__sCfp9EzCBfCXtA-BOFOm7E5gB_PxtfLqG387S5qjBhqgA6m6Z82JIpGBq76kVeI7JMI&disp=emb&realattid=ii_mdqm5f3u0&zw" class="logo" alt="Morgan Tech Logo" />
+      </a>
+      <div class="ms-auto">
+        <a class="nav-link d-inline" href="Contact.html">Contact</a>
+        <a class="nav-link d-inline" href="Business.html">Business</a>
+        <a class="nav-link d-inline" href="About me.html">About Me</a>
+        <a class="nav-link d-inline" href="main.html">Portfolio</a>
+      </div>
+    </div>
+  </nav>
+
+<!-- Contact Section -->
+<section class="contact-section">
+  <div class="container">
+    <h1>Let's Connect</h1>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <!-- Contact Form non-functional for right now  -->
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="mt-5 text-center">
+          <p><strong>Email:</strong> <a href="mailto:morganteague04@gmail.com">morganteague04@gmail.com</a></p>
+          <div class="social-links mt-3">
+            <a href="https://www.linkedin.com/in/morgan-teague-466852232/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/MorganTeague" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
