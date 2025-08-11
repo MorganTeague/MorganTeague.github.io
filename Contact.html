@@ -3,237 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Morgan Tech</title>
-
-  <!-- Bootstrap + Fonts -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    :root {
-      --primary: #5EE4B1;
-      --accent: #FAD4C0;
-      --secondary: #1E2A38;
-      --bg: #FDFDFD;
-      --text: #2D2D2D;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-    }
-
-    .navbar {
-      background-color: var(--secondary);
-      padding: 0.8rem 1rem;
-    }
-
-    .navbar-brand {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .nav-link {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #071f37;
       color: white;
-      margin-left: 1rem;
     }
 
-    .nav-link:hover {
-      color: var(--primary);
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+      justify-content: space-between;
     }
 
-    .logo {
-      width: 60px;
-      margin-right: 8px;
-      border-radius: 50%;
-    }
-
-    #darkModeToggle {
-      background-color: var(--primary);
-      border: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: 600;
-      color: var(--secondary);
-      transition: background-color 0.3s ease;
-      margin-left: 1rem;
-    }
-
-    #darkModeToggle:hover {
-      background-color: var(--accent);
-      color: var(--secondary);
-    }
-
-    .contact-section {
-      padding: 80px 20px;
-      background-color: var(--accent);
-    }
-
-    .contact-section h1 {
-      text-align: center;
+    .form-section {
+      flex: 1 1 45%;
       margin-bottom: 30px;
-      color: var(--secondary);
-      font-weight: 600;
     }
 
-    .form-control, .btn {
-      border-radius: 8px;
+    .form-section h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
     }
 
-    .btn-primary {
-      background-color: var(--primary);
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      background-color: transparent;
+      border: 2px solid #1e4f6f;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    .form-group button {
+      background-color: #f47c6e;
       border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
     }
 
-    .btn-primary:hover {
-      background-color: #47cda1;
+    .info-section {
+      flex: 1 1 45%;
+      color: #b0e0e6;
     }
 
-    .social-links a {
-      font-size: 1.5rem;
-      margin: 0 10px;
-      color: var(--secondary);
+    .info-section h2 {
+      color: #66c2b9;
+      margin-bottom: 10px;
     }
 
-    .social-links a:hover {
-      color: var(--primary);
+    .info-section p {
+      margin: 8px 0;
+      font-size: 16px;
     }
 
-    footer {
-      background: var(--bg);
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #ddd;
-      margin-top: 40px;
-    }
-
-    /* Dark mode styles */
-    .dark-mode {
-      background-color: #1E2A38;
-      color: #FDFDFD;
-    }
-
-    .dark-mode .navbar {
-      background-color: #121a23;
-    }
-
-    .dark-mode .nav-link {
-      color: var(--primary);
-    }
-
-    .dark-mode .nav-link:hover {
-      color: var(--accent);
-    }
-
-    .dark-mode .contact-section {
-      background-color: #2d3e50;
+    .info-section span {
+      font-weight: bold;
       color: #ffffff;
     }
 
-    .dark-mode .contact-section h1 {
-      color: var(--primary);
+    .info-section a {
+      color: #f47c6e;
+      text-decoration: none;
     }
 
-    .dark-mode .form-control {
-      background-color: #3a4b5c;
-      color: white;
-      border: 1px solid #555;
+    .social-icons {
+      margin-top: 10px;
     }
 
-    .dark-mode .form-control::placeholder {
-      color: #ccc;
+    .social-icons a {
+      color: #66c2b9;
+      margin-right: 15px;
+      font-size: 20px;
+      transition: color 0.3s ease;
     }
 
-    .dark-mode .btn-primary {
-      background-color: var(--highlight);
-      color: var(--secondary);
+    .social-icons a:hover {
+      color: #ffffff;
     }
 
-    .dark-mode .social-links a {
-      color: var(--primary);
+    .map {
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
-    .dark-mode footer {
-      background: #121a23;
-      color: #ccc;
-      border-top: 1px solid #444;
+    .map img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .form-section,
+      .info-section {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
-
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="https://github.com/MorganTeague/MorganTeague.github.io/blob/main/unnamed.png?raw=true" class="logo" alt="Morgan Tech Logo" />
-    </a>
-    <div class="ms-auto d-flex align-items-center">
-      <a class="nav-link d-inline" href="home.html">Home</a>
-      <a class="nav-link d-inline" href="Business.html">Business</a>
-      <a class="nav-link d-inline" href="app.html">App</a>
-      <a class="nav-link d-inline" href="main.html">Portfolio</a>
-      <a class="nav-link d-inline" href="Contact.html">Contact</a>
-      <button id="darkModeToggle" aria-pressed="false">Dark Mode</button>
-    </div>
-  </div>
-</nav>
-
-<!-- Contact Section -->
-<section class="contact-section">
-  <div class="container">
-    <h1>Let's Connect</h1>
-
-    <div class="row justify-content-center">
-      <div class="col-md-8 col-lg-6">
-        <!-- Contact Form non-functional for right now -->
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name" />
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Your Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email" />
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Send Message</button>
-        </form>
-
-        <!-- Contact Info -->
-        <div class="mt-5 text-center">
-          <p><strong>Email:</strong> <a href="mailto:morganteague04@gmail.com">morganteague04@gmail.com</a></p>
-          <div class="social-links mt-3">
-            <a href="https://www.linkedin.com/in/morgan-teague-466852232/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/MorganTeague" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          </div>
+    <div class="form-section">
+      <h1>Contact Us</h1>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your Name" required />
         </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Your Message" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
 
+    <div class="info-section">
+      <h2>Contact Information</h2>
+      <p><span>Business:</span> Mon Fri: 9:00am - 6:00 pm</p>
+      <p><span>Address:</span> 1234 Elm St, Anytown, <span style="color:#ffcc99;">USA</span></p>
+      <p><span>Email:</span> <a href="mailto:info@bytebloom.org">info@bytebloom.org</a></p>
+      <p><span>Phone:</span> (123) 456-7890</p>
+
+      <div class="social-icons">
+        <span>Follow Us</span>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <h2 style="margin-top: 30px;">Get In Touch</h2>
+      <div class="map">
+        <img src="https://via.placeholder.com/350x150.png?text=Map+Location" alt="Map Location" />
       </div>
     </div>
   </div>
-</section>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Dark Mode Script -->
-<script>
-  const toggleButton = document.getElementById('darkModeToggle');
-  toggleButton.addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
-    const isPressed = this.getAttribute('aria-pressed') === 'true';
-    this.setAttribute('aria-pressed', !isPressed);
-  });
-</script>
-
 </body>
 </html>
