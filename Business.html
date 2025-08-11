@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ByteBloom & Morgan Tech</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morgan Tech | Navbar with Dark Mode</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -19,18 +19,14 @@
       --highlight: #FFB347;
       --bg: #FDFDFD;
       --text: #2D2D2D;
-
-      --peach: #F28572;
-      --teal: #2A9D8F;
-      --teal-200: #41B3A5;
     }
 
     body {
-      margin: 0;
-      font-family: 'Inter', system-ui, sans-serif;
       background-color: var(--bg);
+      font-family: 'Inter', sans-serif;
       color: var(--text);
-      transition: background-color 0.4s ease, color 0.4s ease;
+      margin: 0;
+      padding: 0;
     }
 
     /* Navbar */
@@ -38,6 +34,7 @@
       background-color: var(--secondary);
       border-bottom: 2px solid var(--primary);
       padding: 0.8rem 1rem;
+      z-index: 10;
     }
 
     .navbar-brand {
@@ -60,7 +57,7 @@
       color: var(--highlight);
     }
 
-    .logo-img {
+    .logo {
       width: 80px;
       height: auto;
       margin-right: 10px;
@@ -83,6 +80,23 @@
       color: var(--secondary);
     }
 
+    /* Full Page Background (below navbar) */
+    .background-container {
+      background-image: url("https://github.com/MorganTeague/MorganTeague.github.io/blob/main/image%20(1).png?raw=true");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+      padding: 40px 20px;
+    }
+
+    .background-container h1,
+    .background-container p {
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    /* Dark Mode */
     .dark-mode {
       background-color: #1E2A38;
       color: #FDFDFD;
@@ -106,268 +120,54 @@
       color: var(--secondary);
     }
 
-    /* ByteBloom Content */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 32px 24px 64px;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .wordmark {
-      font-family: "Bricolage Grotesque", sans-serif;
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 1;
-      color: var(--peach);
-      letter-spacing: 0.3px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 32px;
-      align-items: start;
-      grid-template-columns: 1.05fr 1fr;
-    }
-
-    @media (max-width: 960px) {
-      .grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) {
+      .nav-link {
+        font-size: 0.95rem;
+        margin-left: 0.5rem;
       }
-    }
-
-    .card {
-      background: rgba(0, 0, 0, 0.03);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 16px;
-      padding: 24px;
-      transition: background 0.3s ease, border 0.3s ease;
-    }
-
-    .dark-mode .card {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.12);
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 12px;
-      font-family: "Bricolage Grotesque", sans-serif;
-    }
-
-    h1 {
-      font-size: 40px;
-      color: inherit;
-    }
-
-    h2 {
-      font-size: 34px;
-      color: inherit;
-    }
-
-    h3 {
-      font-size: 22px;
-      color: var(--teal);
-    }
-
-    p {
-      margin: 0 0 14px;
-      line-height: 1.65;
-    }
-
-    .bullets {
-      list-style: none;
-      padding: 0;
-    }
-
-    .bullets li {
-      display: flex;
-      gap: 10px;
-      margin: 10px 0;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--peach);
-      margin-top: 7px;
-      flex-shrink: 0;
-    }
-
-    .stack {
-      display: grid;
-      gap: 18px;
-    }
-
-    .program {
-      background: linear-gradient(180deg, var(--teal-200), var(--teal));
-      color: #07373B;
-      border-radius: 14px;
-      padding: 20px 22px;
-      box-shadow: 0 8px 18px rgba(0,0,0,.25);
-    }
-
-    .label {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      opacity: .95;
-    }
-
-    .cta {
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
-      background: var(--peach);
-      color: #1b2632;
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 8px 18px rgba(242,133,114,.35);
-      margin-top: 12px;
-    }
-
-    .cta svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .meta {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 6px;
-      font-size: 12px;
-    }
-
-    .pill {
-      padding: 6px 10px;
-      border: 1px solid rgba(0,0,0,.14);
-      border-radius: 999px;
-    }
-
-    .dark-mode .pill {
-      border-color: rgba(255,255,255,.2);
-    }
-
-    .illus {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 18px;
-    }
-
-    .plant {
-      width: 220px;
-      height: auto;
-      opacity: .95;
     }
   </style>
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg position-sticky top-0 w-100">
     <div class="container d-flex justify-content-between align-items-center">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="https://github.com/MorganTeague/MorganTeague.github.io/blob/main/unnamed.png?raw=true" class="logo-img" alt="Morgan Tech Logo" />
-        Morgan Tech
+      <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Morgan Tech Home">
+        <img src="https://github.com/MorganTeague/MorganTeague.github.io/blob/main/unnamed.png?raw=true" class="logo" alt="Morgan Tech Logo" />
+        <span class="visually-hidden">Morgan Tech</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="Business.html">Business</a></li>
-          <li class="nav-item"><a class="nav-link" href="app.html">App</a></li>
-          <li class="nav-item"><a class="nav-link" href="main.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
-        </ul>
-        <button id="darkModeToggle" aria-pressed="false">Dark Mode</button>
+
+      <div class="collapse navbar-collapse ms-auto justify-content-end align-items-center" id="navbarNav">
+        <div class="d-flex align-items-center gap-3">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link d-inline" href="home.html">Home</a>
+              <a class="nav-link d-inline" href="Business.html">Business</a>
+              <a class="nav-link d-inline" href="app.html">App</a>
+              <a class="nav-link d-inline" href="main.html">Portfolio</a>
+              <a class="nav-link d-inline" href="Contact.html">Contact</a>
+            </li>
+          </ul>
+          <button id="darkModeToggle" aria-pressed="false">Dark Mode</button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <!-- ByteBloom Content -->
-  <main class="container">
-    <header>
-      <div class="wordmark">ByteBloom</div>
-    </header>
+  <!-- Background Image Section -->
+  <div class="background-container">
+    <div class="container">
+      <h1>Welcome to Morgan Tech!</h1>
+      <p>This is a sample page with dark mode toggle functionality.</p>
+    </div>
+  </div>
 
-    <section class="grid">
-      <!-- About + Get Involved -->
-      <div class="left">
-        <div class="card">
-          <h1>About Us</h1>
-          <p><strong>ByteBloom</strong> empowers youth through tech growth and innovation. We provide smart tools, AI training, and mentorship to help the next generation thrive.</p>
-          <p>Our inclusive, hands‑on approach paves the way for future tech leaders.</p>
-          <div class="meta">
-            <span class="pill">Equity in Access</span>
-            <span class="pill">Youth‑Led</span>
-            <span class="pill">Global Solidarity</span>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:18px">
-          <h2>Get Involved</h2>
-          <ul class="bullets">
-            <li><span class="dot"></span><span>Join our community events</span></li>
-            <li><span class="dot"></span><span>Volunteer as a mentor</span></li>
-            <li><span class="dot"></span><span>Partner with us to make a difference</span></li>
-          </ul>
-          <a class="cta" href="#">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="#1b2632" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Contact Us
-          </a>
-        </div>
-      </div>
-
-      <!-- Programs -->
-      <div class="right">
-        <div class="label">Our Programs</div>
-        <div class="stack">
-          <article class="program">
-            <h3>Workshops & Hackathons</h3>
-            <p>Engaging events to build coding and tech skills.</p>
-          </article>
-          <article class="program">
-            <h3>AI Learning</h3>
-            <p>Courses on artificial intelligence and its applications.</p>
-          </article>
-          <article class="program">
-            <h3>Mentorship</h3>
-            <p>Guidance from tech professionals to inspire and support.</p>
-          </article>
-        </div>
-        <div class="illus">
-          <!-- Decorative SVG -->
-          <svg class="plant" viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.35"/>
-              </filter>
-            </defs>
-            <g filter="url(#s)">
-              <circle cx="185" cy="58" r="34" fill="#F28572"/>
-              <path d="M118 96c28 0 52 24 52 52v77H86v-77c0-28 23-52 52-52Z" fill="#F28572"/>
-              <path d="M226 112c26-4 37 46-16 86 23-46 18-70 16-86Z" fill="#2A9D8F"/>
-              <path d="M248 203a58 58 0 1 1-116 0 58 58 0 0 1 116 0Z" fill="#F28572"/>
-              <circle cx="190" cy="203" r="26" fill="#0F2234"/>
-            </g>
-          </svg>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Bootstrap JS -->
+  <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Dark Mode Script -->
