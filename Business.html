@@ -5,47 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ByteBloom | About Us</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --primary: #5EE4B1;       /* teal-ish */
-      --accent: #FAD4C0;        /* light peach */
-      --secondary: #1E2A38;     /* dark blue */
-      --highlight: #FFB347;     /* orange */
-      --bg: #FDFDFD;            /* near white */
-      --text: #2D2D2D;          /* dark gray */
-      --about-bg: #0A1F44;      /* deep navy from original image */
-      --program-light: #2EA7A1; /* teal color for program boxes */
-      --program-mid: #6CB9B8;
-      --program-dark: #57A693;
-      --placeholder-bg: #F48A81; /* coral-ish placeholder */
+      --deep-navy: #0A1F44;
+      --teal-light: #2EA7A1;
+      --teal-mid: #6CB9B8;
+      --teal-dark: #57A693;
+      --coral: #F48A81;
+      --white: #ffffff;
+      --text-light: #B9CFD9;
     }
 
+    /* Reset & base */
     body {
-      background-color: var(--bg);
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
       margin: 0;
-      padding: 2rem;
+      background: var(--deep-navy);
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-light);
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
 
-    .about-container {
-      max-width: 480px;
-      background-color: var(--about-bg);
-      border-radius: 10px;
-      color: white;
-      padding: 2rem 2.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    main {
+      max-width: 360px;
+      width: 100%;
     }
 
+    /* Sections */
     h2, h3 {
-      font-weight: 600;
-      margin-bottom: 1rem;
+      margin: 0 0 12px 0;
+      font-weight: 700;
+      color: var(--white);
     }
 
     h2 {
@@ -58,78 +54,90 @@
 
     p {
       font-weight: 400;
-      font-size: 0.9rem;
+      font-size: 14px;
       line-height: 1.5;
-      margin-bottom: 1rem;
+      margin-bottom: 14px;
     }
 
+    /* About Us text */
+    .about-text p:last-child {
+      margin-bottom: 28px;
+    }
+
+    /* Get Involved list */
     ul {
+      list-style: none;
       padding-left: 1.3rem;
-      margin-bottom: 2rem;
+      margin: 0 0 28px 0;
     }
 
-    li {
+    ul li {
+      margin-bottom: 8px;
       font-weight: 400;
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
+      font-size: 14px;
+      position: relative;
     }
 
+    ul li::before {
+      content: "•";
+      color: var(--coral);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Program boxes */
     .program-box {
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-      font-weight: 600;
-      font-size: 0.95rem;
+      border-radius: 8px;
+      padding: 16px 20px;
+      color: var(--white);
       margin-bottom: 12px;
+      font-weight: 600;
+      font-size: 14px;
       cursor: default;
+      user-select: none;
     }
 
     .program-desc {
       font-weight: 400;
-      font-size: 0.85rem;
-      margin-top: 0.25rem;
+      font-size: 13px;
+      margin-top: 6px;
+      color: var(--white);
+      opacity: 0.9;
     }
 
     .program-1 {
-      background-color: var(--program-light);
+      background-color: var(--teal-light);
     }
 
     .program-2 {
-      background-color: var(--program-mid);
+      background-color: var(--teal-mid);
     }
 
     .program-3 {
-      background-color: var(--program-dark);
+      background-color: var(--teal-dark);
     }
 
+    /* Placeholder for the image/graphic at bottom */
     .image-placeholder {
-      margin-top: 2.5rem;
-      height: 130px;
-      border-radius: 10px;
-      background-color: var(--placeholder-bg);
+      margin-top: 40px;
+      height: 110px;
+      background-color: var(--coral);
+      border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       font-weight: 600;
-      font-size: 1rem;
-      color: white;
+      color: var(--white);
+      font-size: 16px;
       user-select: none;
     }
 
-    @media (max-width: 576px) {
-      body {
-        padding: 1rem;
-      }
-      .about-container {
-        padding: 1.5rem 1.8rem;
-        max-width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <main class="about-container" role="main" aria-label="About ByteBloom">
-    <section aria-labelledby="about-heading">
+  <main role="main" aria-label="About ByteBloom">
+    <section class="about-text" aria-labelledby="about-heading">
       <h2 id="about-heading">About Us</h2>
       <p>ByteBloom empowers youth through tech growth and innovation. We provide smart tools. All training, and mentorship to help the next generation thrive.</p>
       <p>Our inclusive, hands-on approach paves the way for future tech leaders.</p>
@@ -167,6 +175,5 @@
       Image Placeholder
     </div>
   </main>
-
 </body>
 </html>
