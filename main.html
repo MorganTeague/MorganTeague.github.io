@@ -136,31 +136,101 @@
       .profile-pic {
         margin: 0 auto;
       }
-    }
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1E2A38;
+  color: #FDFDFD;
+}
+
+.dark-mode .navbar {
+  background-color: #121a23;
+  border-bottom-color: var(--highlight);
+}
+
+.dark-mode .nav-link {
+  color: var(--primary);
+}
+
+.dark-mode .nav-link:hover {
+  color: var(--highlight);
+}
+
+.dark-mode .content-box {
+  background-color: #2d3e50;
+  color: #ffffff;
+}
+
+.dark-mode .coral-box {
+  background-color: var(--highlight);
+  color: var(--secondary);
+}
+
+.dark-mode .teal-box {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .tealt-box {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+#darkModeToggle {
+  background-color: var(--primary);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--secondary);
+  transition: background-color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  background-color: var(--highlight);
+  color: var(--secondary);
+}
+
   </style>
 </head>
 
 <body>
 
-  <!-- Navbar -->
+ <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
-    <div class="container">
+    <div class="container align-items-center">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="https://github.com/MorganTeague/MorganTeague.github.io/blob/main/unnamed.png?raw=true" class="logo" alt="Morgan Tech Logo" />
       </a>
-      <div class="ms-auto">
-        <a class="nav-link d-inline" href="home.html">Home</a>
-        <a class="nav-link d-inline" href="Business.html">Business</a>
-        <a class="nav-link d-inline" href="app.html">App</a>
-        <a class="nav-link d-inline" href="main.html">Portfolio</a>
-        <a class="nav-link d-inline" href="Contact.html">Contact</a>
-      </div>
-      <div class="col height70 primarycolor align">
-        <button id="darkModeToggle" class="specialfont">Dark Mode</button>
-      </div>
-    </div>
-  </nav>
+     <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <!-- Navbar Links + Button -->
+    <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Business.html">Business</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="app.html">App</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="main.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Contact.html">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Dark Mode Toggle -->
+      <button id="darkModeToggle" class="ms-3">Dark Mode</button>
+    </div>
+  </div>
+</nav>
   <!-- Title -->
   <div class="main-title">
     Hi, I'm Morgan — A Future Software Developer & STEM Advocate
