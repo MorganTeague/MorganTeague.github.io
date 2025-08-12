@@ -3,217 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | ByteBloom</title>
+  <title>Contact |ByteBloom </title>
 
   <!-- Bootstrap + Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  :root {
+  --primary: #5EE4B1;
+  --accent: #FAD4C0;
+  --secondary: #1E2A38;
+  --bg: #FDFDFD;
+  --text: #2D2D2D;
+   --neon-blue: #00f0ff;
+}
 
-  <style>
-    :root {
-      --primary: #5EE4B1;
-      --accent: #FAD4C0;
-      --secondary: #1E2A38;
-      --bg: #FDFDFD;
-      --text: #2D2D2D;
-      --neon-blue: #00f0ff;
-      --glow-color: #00f0ff;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-    }
+/* Navbar */
+.navbar {
+  background-color: var(--secondary);
+  padding: 0.8rem 1rem;
+  box-shadow: 0 0 10px rgba(94, 228, 177, 0.3);
+}
 
-    /* Navbar */
-    .navbar {
-      background-color: var(--secondary);
-      padding: 0.8rem 1rem;
-      box-shadow: 0 0 10px rgba(94, 228, 177, 0.3);
-    }
+.navbar-brand {
+  color: var(--primary);
+  font-weight: 600;
+  text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
+}
 
-    .navbar-brand {
-      color: var(--primary);
-      font-weight: 600;
-      text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
-    }
-
-    .logo {
+ .logo {
       width: 120px;
       border-radius: 50%;
       margin-right: 10px;
       box-shadow: 0 0 8px var(--neon-blue), 0 0 15px var(--neon-blue);
-      transition: box-shadow 0.3s ease;
     }
+}
 
-    .logo:hover {
-      box-shadow:
-        0 0 12px var(--neon-blue),
-        0 0 25px var(--neon-blue),
-        0 0 35px var(--neon-blue);
-    }
+.nav-link {
+  color: white;
+  margin-left: 1rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
 
-    .nav-link {
-      color: white;
-      margin-left: 1rem;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
+.nav-link:hover {
+  color: var(--primary);
+  text-shadow: 0 0 6px var(--glow-color);
+}
 
-    .nav-link:hover {
-      color: var(--primary);
-      text-shadow: 0 0 6px var(--glow-color);
-    }
+#darkModeToggle {
+  background-color: var(--primary);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--secondary);
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  box-shadow: 0 0 10px var(--primary);
+}
 
-    #darkModeToggle {
-      background-color: var(--primary);
-      border: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: 600;
-      color: var(--secondary);
-      transition: all 0.3s ease;
-      margin-left: 1rem;
-      box-shadow: 0 0 10px var(--primary);
-    }
+#darkModeToggle:hover {
+  background-color: var(--accent);
+  color: var(--secondary);
+  box-shadow: 0 0 15px var(--accent);
+}
 
-    #darkModeToggle:hover {
-      background-color: var(--accent);
-      color: var(--secondary);
-      box-shadow: 0 0 15px var(--accent);
-    }
+/* Contact Section */
+.contact-section {
+  padding: 80px 20px;
+  background-color: var(--accent);
+  box-shadow: inset 0 0 20px rgba(94, 228, 177, 0.2);
+}
 
-    /* Contact Section */
-    .contact-section {
-      padding: 80px 20px;
-      background-color: var(--accent);
-      box-shadow: inset 0 0 20px rgba(94, 228, 177, 0.2);
-    }
+.contact-section h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--secondary);
+  font-weight: 600;
+  text-shadow: 0 0 8px var(--glow-color);
+}
 
-    .contact-section h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: var(--secondary);
-      font-weight: 600;
-      text-shadow: 0 0 8px var(--glow-color);
-    }
+.form-control, .btn {
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
 
-    .form-control, .btn {
-      border-radius: 8px;
-      transition: box-shadow 0.3s ease;
-    }
+.form-control:focus {
+  box-shadow: 0 0 12px var(--primary);
+  border-color: var(--primary);
+}
 
-    .form-control:focus {
-      box-shadow: 0 0 12px var(--primary);
-      border-color: var(--primary);
-    }
+.btn-primary {
+  background-color: var(--primary);
+  border: none;
+  box-shadow: 0 0 10px var(--primary);
+  transition: box-shadow 0.3s ease;
+}
 
-    .btn-primary {
-      background-color: var(--primary);
-      border: none;
-      box-shadow: 0 0 10px var(--primary);
-      transition: box-shadow 0.3s ease;
-    }
+.btn-primary:hover {
+  background-color: #47cda1;
+  box-shadow: 0 0 15px #47cda1;
+}
 
-    .btn-primary:hover {
-      background-color: #47cda1;
-      box-shadow: 0 0 15px #47cda1;
-    }
+/* Social icons */
+.social-links a {
+  font-size: 1.5rem;
+  margin: 0 10px;
+  color: var(--secondary);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
 
-    /* Social icons */
-    .social-links a {
-      font-size: 1.5rem;
-      margin: 0 10px;
-      color: var(--secondary);
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
+.social-links a:hover {
+  color: var(--primary);
+  text-shadow: 0 0 8px var(--primary);
+}
 
-    .social-links a:hover {
-      color: var(--primary);
-      text-shadow: 0 0 8px var(--primary);
-    }
+footer {
+  background: var(--bg);
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
 
-    footer {
-      background: var(--bg);
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #ddd;
-      margin-top: 40px;
-    }
+/* Dark mode glow enhancements */
+.dark-mode {
+  background-color: #1E2A38;
+  color: #FDFDFD;
+}
 
-    /* Dark Mode */
-    .dark-mode {
-      background-color: #1E2A38;
-      color: #FDFDFD;
-    }
+.dark-mode .navbar {
+  background-color: #121a23;
+  box-shadow: 0 0 10px var(--glow-color);
+}
 
-    .dark-mode .navbar {
-      background-color: #121a23;
-      box-shadow: 0 0 10px var(--glow-color);
-    }
+.dark-mode .nav-link {
+  color: var(--primary);
+}
 
-    .dark-mode .nav-link {
-      color: var(--primary);
-    }
+.dark-mode .nav-link:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent);
+}
 
-    .dark-mode .nav-link:hover {
-      color: var(--accent);
-      text-shadow: 0 0 8px var(--accent);
-    }
+.dark-mode .contact-section {
+  background-color: #2d3e50;
+  color: #ffffff;
+  box-shadow: inset 0 0 20px rgba(250, 212, 192, 0.15);
+}
 
-    .dark-mode .contact-section {
-      background-color: #2d3e50;
-      color: #ffffff;
-      box-shadow: inset 0 0 20px rgba(250, 212, 192, 0.15);
-    }
+.dark-mode .contact-section h1 {
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary);
+}
 
-    .dark-mode .contact-section h1 {
-      color: var(--primary);
-      text-shadow: 0 0 10px var(--primary);
-    }
+.dark-mode .form-control {
+  background-color: #3a4b5c;
+  color: white;
+  border: 1px solid #555;
+}
 
-    .dark-mode .form-control {
-      background-color: #3a4b5c;
-      color: white;
-      border: 1px solid #555;
-    }
+.dark-mode .form-control:focus {
+  box-shadow: 0 0 12px var(--accent);
+  border-color: var(--accent);
+}
 
-    .dark-mode .form-control:focus {
-      box-shadow: 0 0 12px var(--accent);
-      border-color: var(--accent);
-    }
+.dark-mode .form-control::placeholder {
+  color: #ccc;
+}
 
-    .dark-mode .form-control::placeholder {
-      color: #ccc;
-    }
+.dark-mode .btn-primary {
+  background-color: var(--highlight);
+  color: var(--secondary);
+  box-shadow: 0 0 12px var(--highlight);
+}
 
-    .dark-mode .btn-primary {
-      background-color: var(--highlight);
-      color: var(--secondary);
-      box-shadow: 0 0 12px var(--highlight);
-    }
+.dark-mode .btn-primary:hover {
+  box-shadow: 0 0 20px var(--highlight);
+}
 
-    .dark-mode .btn-primary:hover {
-      box-shadow: 0 0 20px var(--highlight);
-    }
+.dark-mode .social-links a {
+  color: var(--primary);
+}
 
-    .dark-mode .social-links a {
-      color: var(--primary);
-    }
+.dark-mode .social-links a:hover {
+  text-shadow: 0 0 10px var(--accent);
+}
 
-    .dark-mode .social-links a:hover {
-      text-shadow: 0 0 10px var(--accent);
-    }
-
-    .dark-mode footer {
-      background: #121a23;
-      color: #ccc;
-      border-top: 1px solid #444;
-    }
-  </style>
+.dark-mode footer {
+  background: #121a23;
+  color: #ccc;
+  border-top: 1px solid #444;
+}
+</style>
 </head>
 
 <body>
@@ -234,7 +225,6 @@
     </div>
   </div>
 </nav>
-
 <!-- Contact Section -->
 <section class="contact-section">
   <div class="container">
@@ -242,7 +232,7 @@
 
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6">
-        <!-- Contact Form (non-functional for now) -->
+        <!-- Contact Form non-functional for right now -->
         <form>
           <div class="mb-3">
             <label for="name" class="form-label">Your Name</label>
@@ -254,4 +244,38 @@
           </div>
           <div class="mb-3">
             <label for="message" class="form-label">Message</label>
-            <textarea class="form-control"
+            <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="mt-5 text-center">
+          <p><strong>Email:</strong> <a href="mailto:morganteague04@gmail.com">morganteague04@gmail.com</a></p>
+          <div class="social-links mt-3">
+            <a href="https://www.linkedin.com/in/morgan-teague-466852232/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/MorganTeague" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Dark Mode Script -->
+<script>
+   const toggleButton = document.getElementById('darkModeToggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      toggleButton.setAttribute('aria-pressed', isDark);
+      toggleButton.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+  });
+</script>
+
+</body>
+</html>
