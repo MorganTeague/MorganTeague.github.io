@@ -15,6 +15,7 @@
       --text-light: #1a1a1a;
       --text-dark: #f0f0f0;
       --neon-blue: #00f0ff;
+      --navbar-bg: #1e2736; /* Sleek, modern dark-blue navbar */
     }
 
     body {
@@ -27,19 +28,20 @@
 
     /* Navbar */
     .navbar {
-      background-color: var(--secondary);
-      padding: 1rem 1.5rem;
+      background-color: var(--navbar-bg);
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
     .navbar-brand {
       display: flex;
       align-items: center;
-      color: var(--primary);
       font-weight: bold;
       font-size: 1.2rem;
+      color: var(--primary);
       text-decoration: none;
     }
 
@@ -47,7 +49,7 @@
       width: 48px;
       border-radius: 50%;
       margin-right: 10px;
-      box-shadow: 0 0 8px var(--neon-blue), 0 0 15px var(--neon-blue); /* Neon blue rim */
+      box-shadow: 0 0 8px var(--neon-blue), 0 0 15px var(--neon-blue);
     }
 
     .nav-link {
@@ -81,12 +83,13 @@
     /* Hero Section */
     .container {
       max-width: 1200px;
-      margin: auto;
-      padding: 50px 20px;
+      margin: 0 auto;
+      padding: 60px 20px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      gap: 40px;
     }
 
     .left {
@@ -94,14 +97,14 @@
     }
 
     .right {
-      flex: 1 1 300px;
+      flex: 1 1 400px;
       display: flex;
       justify-content: center;
     }
 
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
+      font-size: 3rem;
+      margin-bottom: 20px;
       color: var(--text-dark);
     }
 
@@ -121,7 +124,7 @@
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
-      margin: 20px 0;
+      margin: 30px 0 20px;
       transition: background-color 0.3s;
     }
 
@@ -160,11 +163,13 @@
       background-color: var(--highlight);
     }
 
-    .flower {
-      width: 180px;
+    .hero-image {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 16px;
       background-color: white;
-      padding: 30px;
-      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
     }
 
     footer {
@@ -181,17 +186,21 @@
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-      }
-
-      .right {
-        margin-top: 40px;
+        align-items: center;
+        text-align: center;
       }
 
       .navbar {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .nav-link {
+        margin: 0.5rem 0;
+      }
+
+      .right {
+        margin-top: 30px;
       }
     }
 
@@ -224,8 +233,8 @@
       border-top: 1px solid #333;
     }
 
-    .dark-mode .flower {
-      background-color: white;
+    .dark-mode .hero-image {
+      background-color: #fff;
     }
   </style>
 </head>
@@ -236,6 +245,7 @@
   <nav class="navbar">
     <a class="navbar-brand" href="index.html">
       <img src="https://github.com/MorganTeague/MorganTeague.github.io/blob/main/unnamed.png?raw=true" class="logo" alt="Logo" />
+      ByteBloom
     </a>
 
     <div class="d-flex align-items-center">
@@ -270,9 +280,18 @@
         </div>
       </div>
     </div>
+
+    <div class="right">
+      <img src="https://via.placeholder.com/360x300.png?text=ByteBloom+Hero+Graphic" alt="Hero Illustration" class="hero-image" />
+    </div>
   </div>
 
-  <!-- Dark Mode Toggle Script -->
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 ByteBloom. All rights reserved.
+  </footer>
+
+  <!-- Dark Mode Toggle -->
   <script>
     const toggleButton = document.getElementById('darkModeToggle');
     toggleButton.addEventListener('click', () => {
