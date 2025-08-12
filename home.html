@@ -14,6 +14,7 @@
       --bg-light: #f5f7fa;
       --text-light: #1a1a1a;
       --text-dark: #f0f0f0;
+      --neon-blue: #00f0ff;
     }
 
     body {
@@ -24,6 +25,7 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
+    /* Navbar */
     .navbar {
       background-color: var(--secondary);
       padding: 1rem 1.5rem;
@@ -45,6 +47,7 @@
       width: 48px;
       border-radius: 50%;
       margin-right: 10px;
+      box-shadow: 0 0 8px var(--neon-blue), 0 0 15px var(--neon-blue); /* Neon blue rim */
     }
 
     .nav-link {
@@ -75,6 +78,7 @@
       color: var(--secondary);
     }
 
+    /* Hero Section */
     .container {
       max-width: 1200px;
       margin: auto;
@@ -125,6 +129,7 @@
       background-color: var(--accent);
     }
 
+    /* Features */
     .features {
       margin-top: 30px;
     }
@@ -172,6 +177,7 @@
       margin-top: 60px;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
@@ -223,14 +229,15 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
     <a class="navbar-brand" href="index.html">
       <img src="https://github.com/MorganTeague/MorganTeague.github.io/blob/main/unnamed.png?raw=true" class="logo" alt="Logo" />
-      ByteBloom
     </a>
+
     <div class="d-flex align-items-center">
       <a class="nav-link" href="home.html">Home</a>
       <a class="nav-link" href="Business.html">Business</a>
@@ -263,8 +270,9 @@
         </div>
       </div>
     </div>
+  </div>
 
-  <!-- Dark Mode Script -->
+  <!-- Dark Mode Toggle Script -->
   <script>
     const toggleButton = document.getElementById('darkModeToggle');
     toggleButton.addEventListener('click', () => {
