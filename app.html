@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>App | ByteBloom</title>
+  <title>ByteBloom | App</title>
 
-  <!-- Bootstrap + Fonts -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Fonts & Bootstrap -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
@@ -15,6 +15,7 @@
       --primary: #5EE4B1;
       --accent: #FAD4C0;
       --secondary: #1E2A38;
+      --highlight: #FFB347;
       --bg: #FDFDFD;
       --text: #2D2D2D;
     }
@@ -24,9 +25,10 @@
       background-color: var(--bg);
       color: var(--text);
       margin: 0;
-      padding: 0;
+      transition: background 0.3s, color 0.3s;
     }
 
+    /* Navbar */
     .navbar {
       background-color: var(--secondary);
       padding: 0.8rem 1rem;
@@ -40,7 +42,6 @@
     .nav-link {
       color: white;
       margin-left: 1rem;
-      text-decoration: none;
     }
 
     .nav-link:hover {
@@ -48,11 +49,9 @@
     }
 
     .logo {
-      width: 80px;
-      height: auto;
-      margin-right: 10px;
+      width: 120px; /* ⬅️ 2x bigger */
+      margin-right: 8px;
       border-radius: 50%;
-      border: 2px solid var(--primary);
     }
 
     #darkModeToggle {
@@ -64,7 +63,6 @@
       color: var(--secondary);
       transition: background-color 0.3s ease;
       margin-left: 1rem;
-      cursor: pointer;
     }
 
     #darkModeToggle:hover {
@@ -72,7 +70,27 @@
       color: var(--secondary);
     }
 
-    /* Dark mode styles */
+    /* Main Content */
+    .main-content {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .main-content h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .app-image {
+      max-width: 100%;
+      width: 800px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      border: 5px solid var(--primary);
+    }
+
+    /* Dark Mode */
     .dark-mode {
       background-color: #1E2A38;
       color: #FDFDFD;
@@ -89,30 +107,38 @@
     .dark-mode .nav-link:hover {
       color: var(--accent);
     }
+
+    .dark-mode #darkModeToggle {
+      background-color: var(--highlight);
+      color: var(--secondary);
+    }
+
+    .dark-mode .app-image {
+      border-color: var(--highlight);
+    }
   </style>
 </head>
-
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="https://github.com/MorganTeague/MorganTeague.github.io/blob/main/unnamed.png?raw=true" class="logo" alt="Morgan Tech Logo" />
-    </a>
-    <div class="ms-auto d-flex align-items-center">
-      <a class="nav-link d-inline" href="home.html">Home</a>
-      <a class="nav-link d-inline" href="Business.html">Business</a>
-      <a class="nav-link d-inline" href="app.html">App</a>
-      <a class="nav-link d-inline" href="main.html">Portfolio</a>
-      <a class="nav-link d-inline" href="Contact.html">Contact</a>
-      <button id="darkModeToggle" aria-pressed="false">Dark Mode</button>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://github.com/MorganTeague/MorganTeague.github.io/blob/main/unnamed.png?raw=true" class="logo" alt="Morgan Tech Logo" />
+        Morgan Tech
+      </a>
+      <div class="ms-auto d-flex align-items-center">
+        <a class="nav-link d-inline" href="home.html">Home</a>
+        <a class="nav-link d-inline" href="Business.html">Business</a>
+        <a class="nav-link d-inline" href="app.html">App</a>
+        <a class="nav-link d-inline" href="main.html">Portfolio</a>
+        <a class="nav-link d-inline" href="Contact.html">Contact</a>
+        <button id="darkModeToggle" aria-pressed="false">Dark Mode</button>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- Your app page content here -->
-<!-- App Content -->
+  <!-- App Content -->
   <section class="main-content">
     <h1>Our App</h1>
     <img
@@ -122,19 +148,19 @@
     />
   </section>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Dark Mode Script -->
-<script>
-  const toggleButton = document.getElementById('darkModeToggle');
-  toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    toggleButton.setAttribute('aria-pressed', isDark);
-    toggleButton.textContent = isDark ? 'Light Mode' : 'Dark Mode';
-  });
-</script>
+  <!-- Dark Mode Toggle -->
+  <script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    toggleButton.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+      const isPressed = this.getAttribute('aria-pressed') === 'true';
+      this.setAttribute('aria-pressed', !isPressed);
+      this.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+    });
+  </script>
 
 </body>
 </html>
