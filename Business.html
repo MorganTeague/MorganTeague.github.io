@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ByteBloom & Morgan Tech</title>
+  <title>ByteBloom | Business</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,19 +13,24 @@
 
   <style>
     :root {
-
-      /* Morgan Tech colors */
       --primary: #5EE4B1;
       --accent: #FAD4C0;
       --secondary: #1E2A38;
       --highlight: #FFB347;
       --bg: #FDFDFD;
       --text: #2D2D2D;
-       --neon-blue: #00f0ff;
+
+      /* Added missing variables */
+      --ink: #2D2D2D;
+      --navy: #12324b;
+      --peach: #F28572;
+      --teal: #5EE4B1;
+      --teal-200: #b2f0d9;
+      --neon-blue: #6be4ff;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
 
     body {
       margin: 0;
@@ -35,7 +40,6 @@
       letter-spacing: 0.2px;
     }
 
-    /* Navbar styles */
     .navbar {
       background-color: var(--secondary);
       border-bottom: 2px solid var(--primary);
@@ -84,7 +88,6 @@
       color: var(--secondary);
     }
 
-    /* Dark Mode */
     .dark-mode {
       background-color: #1E2A38 !important;
       color: #FDFDFD !important;
@@ -108,7 +111,6 @@
       color: var(--secondary);
     }
 
-    /* ByteBloom content styles */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -287,8 +289,7 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container d-flex justify-content-between align-items-center">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="https://github.com/MorganTeague/MorganTeague.github.io/blob/main/unnamed.png?raw=true" class="logo-img" alt="Morgan Tech Logo" />
-        Morgan Tech
+        <img src="https://raw.githubusercontent.com/MorganTeague/MorganTeague.github.io/main/unnamed.png" class="logo" alt="Morgan Tech Logo" />
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -306,84 +307,57 @@
     </div>
   </nav>
 
-  <!-- ByteBloom Main Content -->
-  <main class="container">
-    <header>
-      <div class="bytebloom-logo">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 3v11" stroke="#2A9D8F" stroke-width="2" stroke-linecap="round"/>
-          <path d="M6 9l6 5 6-5" stroke="#2A9D8F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="4" cy="11" r="2" fill="#2A9D8F"/>
-          <circle cx="20" cy="11" r="2" fill="#2A9D8F"/>
-          <rect x="10.3" y="1.8" width="3.4" height="3.4" rx="0.6" fill="#F28572"/>
-        </svg>
-      </div>
-      <div class="wordmark">ByteBloom</div>
-    </header>
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <section class="grid">
+        <!-- About + Get Involved -->
+        <div class="left">
+          <div class="card">
+            <h1>About Us</h1>
+            <p><strong>ByteBloom</strong> empowers youth through tech growth and innovation. We provide smart tools, AI training, and mentorship to help the next generation thrive.</p>
+            <p>Our inclusive, hands‑on approach paves the way for future tech leaders.</p>
+            <div class="meta">
+              <span class="pill">Equity in Access</span>
+              <span class="pill">Youth‑Led</span>
+              <span class="pill">Global Solidarity</span>
+            </div>
+          </div>
 
-    <section class="grid">
-      <!-- About + Get Involved -->
-      <div class="left">
-        <div class="card">
-          <h1>About Us</h1>
-          <p><strong>ByteBloom</strong> empowers youth through tech growth and innovation. We provide smart tools, AI training, and mentorship to help the next generation thrive.</p>
-          <p>Our inclusive, hands‑on approach paves the way for future tech leaders.</p>
-          <div class="meta">
-            <span class="pill">Equity in Access</span>
-            <span class="pill">Youth‑Led</span>
-            <span class="pill">Global Solidarity</span>
+          <div class="card" style="margin-top:18px">
+            <h2>Get Involved</h2>
+            <ul class="bullets">
+              <li><span class="dot"></span><span>Join our community events</span></li>
+              <li><span class="dot"></span><span>Volunteer as a mentor</span></li>
+              <li><span class="dot"></span><span>Partner with us to make a difference</span></li>
+            </ul>
+            <a class="cta" href="contact.html">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="#1b2632" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Contact Us
+            </a>
           </div>
         </div>
 
-        <div class="card" style="margin-top:18px">
-          <h2>Get Involved</h2>
-          <ul class="bullets">
-            <li><span class="dot"></span><span>Join our community events</span></li>
-            <li><span class="dot"></span><span>Volunteer as a mentor</span></li>
-            <li><span class="dot"></span><span>Partner with us to make a difference</span></li>
-          </ul>
-          <a class="cta" href="#">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="#1b2632" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Contact Us
-          </a>
+        <!-- Programs -->
+        <div class="right">
+          <div class="label">Our Programs</div>
+          <div class="stack">
+            <article class="program">
+              <h3>Workshops &amp; Hackathons</h3>
+              <p>Engaging events to build coding and tech skills.</p>
+            </article>
+            <article class="program">
+              <h3>AI Learning</h3>
+              <p>Courses on artificial intelligence and its applications.</p>
+            </article>
+            <article class="program">
+              <h3>Mentorship</h3>
+              <p>Guidance from tech professionals to inspire and support.</p>
+            </article>
+          </div>
         </div>
-      </div>
-
-      <!-- Programs -->
-      <div class="right">
-        <div class="label">Our Programs</div>
-        <div class="stack">
-          <article class="program">
-            <h3>Workshops &amp; Hackathons</h3>
-            <p>Engaging events to build coding and tech skills.</p>
-          </article>
-          <article class="program">
-            <h3>AI Learning</h3>
-            <p>Courses on artificial intelligence and its applications.</p>
-          </article>
-          <article class="program">
-            <h3>Mentorship</h3>
-            <p>Guidance from tech professionals to inspire and support.</p>
-          </article>
-        </div>
-        <div class="illus">
-          <svg class="plant" viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.35"/>
-              </filter>
-            </defs>
-            <g filter="url(#s)">
-              <circle cx="185" cy="58" r="34" fill="#F28572"/>
-              <path d="M118 96c28 0 52 24 52 52v77H86v-77c0-28 23-52 52-52Z" fill="#F28572"/>
-              <path d="M226 112c26-4 37 46-16 86 23-46 18-70 16-86Z" fill="#2A9D8F"/>
-              <path d="M248 203a58 58 0 1 1-116 0 58 58 0 0 1 116 0Z" fill="#F28572"/>
-              <circle cx="190" cy="203" r="26" fill="#0F2234"/>
-            </g>
-          </svg>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <!-- Bootstrap JS -->
@@ -396,8 +370,7 @@
       document.body.classList.toggle('dark-mode');
       const isPressed = this.getAttribute('aria-pressed') === 'true';
       this.setAttribute('aria-pressed', !isPressed);
-      this.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
-    }); 
+    });
   </script>
 </body>
 </html>
